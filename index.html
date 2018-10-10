@@ -14,23 +14,23 @@
         <h1>Number<span class="title-span">Guesser</span></h1>
         <div class="min-max-div">
           <h2>Min Range</h2>
-          <input type="number">
+          <input type="number" class="min-number">
         </div>
         <div class="min-max-div">
           <h2>Max Range</h2>
-          <input type="number">
+          <input type="number" class="max-number">
         </div>
-        <button>UPDATE</button>
+        <button class="update.btn">UPDATE</button>
       </section>
       <section class="input-guess">
-        <p>The Current Range is <span class="range-span">1</span> to <span class="range-span">100</span></p>
+        <p>The Current Range is <span class="range-span range-start">1</span> to <span class="range-span range-end">100</span></p>
         <div>
           <h2>Guess</h2>
-          <input type="number">
-          <button class="submit-button">Submit Guess</button>
+          <input type="number" class="guess-input">
+          <button class="submit-btn">Submit Guess</button>
           <article>
-            <button>Clear</button>
-            <button>Reset</button>
+            <button class="clear-btn">Clear</button>
+            <button class="reset-btn">Reset</button>
           </article>
         </div>
       </section>
@@ -39,8 +39,8 @@
   <aside>
     <div class="guess-side">
       <h3>You Guessed:</h3>
-      <h4>25</h4>
-      <h5>Sorry, that is too high </h5>
+      <h4 class="recent-guess">25</h4>
+      <h5 class="guess-message">Sorry, that is too high </h5>
     </div>
   </aside>
 </div>
