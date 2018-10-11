@@ -1,3 +1,4 @@
+//number input accepting e
 var genNum = genRanNum(0, 100);
 var minNum = document.querySelector('.min-number');
 var maxNum = document.querySelector('.max-number');
@@ -17,17 +18,19 @@ console.log(genNum);
 
 // this function grab the value of the user guess upon a button click and update the inner text of our h4
 
-submitBtn.addEventListener('click', guessMessageUpdate);
+submitBtn.addEventListener('click', guessCaller);
 updateBtn.addEventListener('click', customRange);
 resetBtn.addEventListener('click', resetGame);
 
 
 // this function should take the user guess and compare it to the computer generated number. Then display appropriate message.
-function guessMessageUpdate(event){
-  event.preventDefault();
-  var parsedNum = parseInt(guessInput.value);
+function guessNumberUpdate(){
     recentGuess.innerText = guessInput.value;
     console.log(recentGuess);
+}
+
+  function guessMessageUpdate(){
+    var parsedNum = parseInt(guessInput.value);
   if(parsedNum < genNum){
     guessMessage.innerText = "That guess is too low!"
   } else if(parsedNum > genNum){
@@ -36,6 +39,12 @@ function guessMessageUpdate(event){
     guessMessage.innerText = "BOOM!"
   };
 };
+
+function guessCaller(){
+  guessNumberUpdate();
+  guessMessageUpdate();
+}
+
 
 function customRange(event){
   event.preventDefault();
