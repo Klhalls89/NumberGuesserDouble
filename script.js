@@ -13,13 +13,18 @@ var recentGuess = document.querySelector('.recent-guess');
 var guessMessage = document.querySelector('.guess-message');
 
 
+var guessParse = parseInt(guessInput.value);
+var minParse = parseInt(minNum.value);
+var maxParse = parseInt(maxNum.value);
+
+
 console.log(genNum);
 
 
 // this function grab the value of the user guess upon a button click and update the inner text of our h4
 
 submitBtn.addEventListener('click', guessCaller);
-updateBtn.addEventListener('click', customRange);
+updateBtn.addEventListener('click', rangeChecker);
 resetBtn.addEventListener('click', resetGame);
 
 
@@ -64,8 +69,7 @@ function guessCaller(){
 
 
 
-function customRange(event){
-  event.preventDefault();
+function customRange(){
   // Grabbing the min and max from the inputs. They are being stored as string values. 
   var min = minNum.value;
   var max = maxNum.value;
@@ -97,6 +101,15 @@ function resetGame(event){
 }
 
 
+function rangeChecker(){
+  var minParse = parseInt(minNum.value);
+  var maxParse = parseInt(maxNum.value);
+  if( minParse > maxParse ){
+  document.getElementById('hidden').classList.remove('hiddenP');
 
+  } else {
+    customRange();
+  };
+}
 
 
