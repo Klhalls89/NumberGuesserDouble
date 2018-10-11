@@ -100,7 +100,9 @@ h4 {
   width: 48%;
 }
 
-
+.hiddenP {
+  display: none;
+}
 
 
 
