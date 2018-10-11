@@ -31,19 +31,37 @@ function guessNumberUpdate(){
 
   function guessMessageUpdate(){
     var parsedNum = parseInt(guessInput.value);
-  if(parsedNum < genNum){
+    if(parsedNum < genNum){
     guessMessage.innerText = "That guess is too low!"
   } else if(parsedNum > genNum){
     guessMessage.innerText = "That guess is too high!"
   } else if(parsedNum === genNum){
     guessMessage.innerText = "BOOM!"
   };
-};
-
-function guessCaller(){
-  guessNumberUpdate();
-  guessMessageUpdate();
 }
+
+function guessChecker(){
+  var guessParse = parseInt(guessInput.value);
+  var minParse = parseInt(minNum.value);
+  var maxParse = parseInt(maxNum.value);
+
+  if(guessParse < minParse || guessParse > maxParse){
+      guessMessage.innerText = "ERROR! Guess is outside of set range.";
+    } else {
+      guessMessageUpdate();
+    };
+}
+
+
+//why can't we take this out and just pass in guess checker
+function guessCaller(){
+  guessChecker();
+  guessNumberUpdate();
+}
+
+// in guess input check if entered value is less then min range or greater then max range to display message indicating the error
+
+
 
 
 function customRange(event){
