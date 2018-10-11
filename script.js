@@ -64,6 +64,9 @@ function resetGame(event){
   guessInput.value = '';
   genNum = genRanNum(0, 100);
   console.log(genNum);
+  rangeStart.innerText = 0;
+  rangeEnd.innerText = 100;
+
 }
 
 
