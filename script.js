@@ -18,8 +18,10 @@ console.log(genNum);
 // this function grab the value of the user guess upon a button click and update the inner text of our h4
 
 submitBtn.addEventListener('click', guessMessageUpdate);
+updateBtn.addEventListener('click', customRange);
+resetBtn.addEventListener('click', resetGame);
 
-updateBtn.addEventListener('click', customRange)
+
 // this function should take the user guess and compare it to the computer generated number. Then display appropriate message.
 function guessMessageUpdate(event){
   event.preventDefault();
@@ -55,6 +57,14 @@ function genRanNum(min, max){
   return Math.ceil(Math.random() * (max - min) + min);
 };
 
+function resetGame(event){
+  event.preventDefault();
+  minNum.value = '';
+  maxNum.value = '';
+  guessInput.value = '';
+  genNum = genRanNum(0, 100);
+  console.log(genNum);
+}
 
 
 
