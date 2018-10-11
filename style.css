@@ -72,3 +72,31 @@ h4 {
   font-weight: 700;
   font-size: 150pt;
 }
+
+.bottom-half{
+  width: 90%;
+}
+.input-guess{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /*width: 90%;*/
+  /*height: 50vh;*/
+}
+.clear-reset{
+  display: flex;
+  
+
+}
+.clear-btn .reset-btn{
+  width: 48%;
+}
+
+
+
+
+
+
+
+
+
