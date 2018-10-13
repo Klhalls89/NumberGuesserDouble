@@ -3,10 +3,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.align {
-  display: flex;
-}
-
 main {
   width: 50%;
   height: 100vh;
@@ -31,7 +27,7 @@ h1 {
   font-weight: 300;
 }
 
-.main-content{
+.play-half{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -58,7 +54,7 @@ aside {
   align-items: center;
 }
 
-.guess-side{
+.card-half{
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -81,9 +77,7 @@ h4 {
   font-size: 150pt;
 }
 
-.bottom-half{
-  width: 90%;
-}
+
 .input-guess{
   display:flex;
   flex-direction: column;

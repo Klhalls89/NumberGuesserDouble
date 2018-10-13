@@ -7,11 +7,13 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 </head>
 <body>
-  <div class="align">
+  <header>
+    <h1 class="title">Number<span class="title-span">Guesser</span></h1>
+    <p class="subtitle">Ultimate Challenger Edditon</p>
+  </header>
   <main>
-    <div class="main-content">
+    <div class="play-half">
       <section class="input-range">
-        <h1 class="title">Number<span class="title-span">Guesser</span></h1>
         <div class="min-max-div">
           <h2>Min Range</h2>
           <input type="number" class="min-number">
@@ -23,7 +25,7 @@
         <button class="update-btn">UPDATE</button>
         <p id="hidden" class="hiddenP">Your range is incorrect</p>
       </section>
-      <section class="bottom-half" >
+      <section class="" >
         <div class="range-feedback">
           <p>The Current Range is 
             <span class="range-span range-start">1</span> to 
@@ -43,13 +45,12 @@
     </div>
   </main>
   <aside>
-    <div class="guess-side">
+    <div class="card-half">
       <h3>You Guessed:</h3>
-      <h4 class="recent-guess">25</h4>
-      <h5 class="guess-message">Sorry, that is too high </h5>
+      <h4 class="recent-guess">??</h4>
+      <h5 class="guess-message">The game is afoot.</h5>
     </div>
   </aside>
-</div>
 </body>
 <script type="text/javascript" src="script.js"></script>
 </html>
