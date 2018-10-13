@@ -1,5 +1,5 @@
 //number input accepting e
-var genNum = genRanNum(0, 100);
+var genNum = genRanNum(1, 100);
 var minNum = document.querySelector('.min-number');
 var maxNum = document.querySelector('.max-number');
 var updateBtn = document.querySelector('.update-btn');
@@ -8,7 +8,7 @@ var rangeEnd = document.querySelector('.range-end');
 var guessInput = document.querySelector('.guess-input');
 var submitBtn = document.querySelector('.submit-btn');
 var clearBtn = document.querySelector('.clear-btn');
-var resetBtn = document.querySelector('.reset-btn');
+var resetBtn = document.querySelector('#reset-btn');
 var recentGuess = document.querySelector('.recent-guess');
 var guessMessage = document.querySelector('.guess-message');
 
@@ -26,8 +26,10 @@ console.log(genNum);
 submitBtn.addEventListener('click', guessCaller);
 updateBtn.addEventListener('click', rangeChecker);
 resetBtn.addEventListener('click', resetGame);
-
-
+clearBtn.addEventListener('click', clearFields);
+guessInput.addEventListener('input', enableClear);
+minNum.addEventListener('input', enableReset);
+maxNum.addEventListener('input', enableReset);
 // this function should take the user guess and compare it to the computer generated number. Then display appropriate message.
 function guessNumberUpdate(){
     recentGuess.innerText = guessInput.value;
@@ -46,9 +48,10 @@ function guessNumberUpdate(){
 }
 
 function guessChecker(){
+  emptyGuess();
   var guessParse = parseInt(guessInput.value);
-  var minParse = parseInt(minNum.value);
-  var maxParse = parseInt(maxNum.value);
+  var minParse = parseInt(minNum.value) || 1;
+  var maxParse = parseInt(maxNum.value) || 100;
 
   if(guessParse < minParse || guessParse > maxParse){
       guessMessage.innerText = "ERROR! Guess is outside of set range.";
@@ -57,6 +60,11 @@ function guessChecker(){
     };
 }
 
+function emptyGuess(){
+  if(guessInput.value === ''){
+    alert('Please enter a number for your guess!')
+  }
+}
 
 //why can't we take this out and just pass in guess checker
 function guessCaller(){
@@ -93,23 +101,56 @@ function resetGame(event){
   minNum.value = '';
   maxNum.value = '';
   guessInput.value = '';
-  genNum = genRanNum(0, 100);
+  genNum = genRanNum(1, 100);
   console.log(genNum);
-  rangeStart.innerText = 0;
+  rangeStart.innerText = 1;
   rangeEnd.innerText = 100;
-
+  guessMessage.innerText = "A new game has started!";
+  recentGuess.innerText = "??";
+  disableReset();
 }
 
+function enableReset(){
+  if(minNum.value !== '' || maxNum.value !== '' || guessInput.value !== ''){
+    document.getElementById('reset-btn').removeAttribute('disabled');
+  } 
+}
+
+function disableReset(){
+  document.getElementById('reset-btn').setAttribute('disabled', 'disabled');
+}
+// if player enters a min or max or guess, the reset button should be enabled. Otherwise the button should be disabled. 
 
 function rangeChecker(){
+  emptyMinMax();
   var minParse = parseInt(minNum.value);
   var maxParse = parseInt(maxNum.value);
   if( minParse > maxParse ){
   document.getElementById('hidden').classList.remove('hiddenP');
-
-  } else {
+   } else {
     customRange();
-  };
+    }
 }
+
+function emptyMinMax(){
+  if(minNum.value === '' || maxNum.value === ''){
+    alert('Please enter a minimum AND maximum number!');
+  }
+}
+
+function clearFields(){
+  guessInput.value = '';
+  document.getElementById('clear-disable').setAttribute('disabled', 'disabled');
+}
+
+function enableClear(){
+  document.getElementById('clear-disable').removeAttribute('disabled');
+  enableReset();
+}
+
+
+
+
+
 
 
