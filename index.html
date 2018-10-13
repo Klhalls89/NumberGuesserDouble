@@ -1,55 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Number Guesser Doubles</title>
-  <link rel="stylesheet" type="text/css" href="reset.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-</head>
-<body>
-  <div class="align">
-  <main>
-    <div class="main-content">
-      <section class="input-range">
-        <h1 class="title">Number<span class="title-span">Guesser</span></h1>
-        <div class="min-max-div">
-          <h2>Min Range</h2>
-          <input type="number" class="min-number">
-        </div>
-        <div class="min-max-div">
-          <h2>Max Range</h2>
-          <input type="number" class="max-number">
-        </div>
-        <button class="update-btn">UPDATE</button>
-        <p id="hidden" class="hiddenP">Your range is incorrect</p>
-      </section>
-      <section class="bottom-half" >
-        <div class="range-feedback">
-          <p>The Current Range is 
-            <span class="range-span range-start">1</span> to 
-            <span class="range-span range-end">100</span>
-          </p>
-        </div>
-        <div class="input-guess">
-          <h2>Guess</h2>
-          <input type="number" class="guess-input">
-          <button class="submit-btn">Submit Guess</button>
-          <article class="clear-reset">
-            <button class="clear-btn" id="clear-disable" disabled>Clear</button>
-            <button id="reset-btn" disabled>Reset</button>
+  <head>
+    <title>Number Guesser Doubles</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Number<span class="title-span">Guesser</span></h1>
+      <p class="subtitle">Ulitmate Challanger Edition</p> 
+    </header>
+    <main>
+      <div class="play-half">
+        <section class="input-range">
+          <p>Set Range</p>
+          <div class="min-max-div">
+            <h2>Min Range</h2>
+            <input type="number" class="min-number">
+          </div>
+          <div class="min-max-div">
+            <h2>Max Range</h2>
+            <input type="number" class="max-number">
+          </div>
+          <button class="update-btn">UPDATE</button>
+          <p id="hidden" class="hiddenP">Your range is incorrect</p>
+        </section>
+        <section class="guess-sect" >
+          <div class="range-feedback">
+            <p>The Current Range is 
+              <span class="range-span range-start">1</span> to 
+              <span class="range-span range-end">100</span>
+            </p>
+          </div>
+          <div class="input-guess">
+            <article class="chal-one-art">
+              <p>Challanger-One</p>
+              <h2>Name</h2>
+              <input type="username">
+              <h2>Guess</h2>
+              <input type="number" class="guess-input">
+            </article>
+            <article class="chal-two-art">
+              <p>Challanger-Two</p>
+              <h2>Name</h2>
+              <input type="username">
+              <h2>Guess</h2>
+              <input type="number" class="guess-input">
+            </article>
+            <article class="clear-reset">
+              <button class="submit-btn">Submit Guess</button>
+              <button id="reset-btn" disabled>Reset</button>
+              <button class="clear-btn" id="clear-disable" disabled>Clear</button>
+            </article>
+          </div>
+         </section>
+        <section class="score-sect">
+          <p class="latest-score">Latest Score</p>
+          <article>
+            <p class="challanger-name">Challanger One Name</p>
+            <p class="current-guess">Current Guess</p>
+            <p class="recent-guess">??</p>
+            <p class="guess-message">The game is afoot!</p>
           </article>
-        </div>
-      </section>
-    </div>
-  </main>
-  <aside>
-    <div class="guess-side">
-      <h3>You Guessed:</h3>
-      <h4 class="recent-guess">??</h4>
-      <h5 class="guess-message">The game is afoot!</h5>
-    </div>
-  </aside>
-</div>
-</body>
-<script type="text/javascript" src="script.js"></script>
+          <article>
+            <p class="challanger-name">Challanger Two Name</p>
+            <p class="current-guess">Current Guess</p>
+            <p class="recent-guess">??</p>
+            <p class="guess-message">The game is afoot!</p>
+          </article>
+        </section>
+      </div>
+    </main>
+    <aside>
+      <div class="card-half">
+        <section class="card">
+          <article class="card-head">
+            <p>Challanger One Name</p>
+            <p>Vs</p>
+            <p>Challanger Two Name</p>
+          </article>
+          <article class="card-body">
+            <p>Challanger Winner Name</p>
+            <p>Winner</p>
+          </article>
+          <article class="card-foot">
+            <h3 class="num-guess-update">#</h3>
+            <h4>Gusses</h4>
+            <h3 class="num-minutes-update">#</h3>
+            <h4>minutes</h4>
+            <button>X</button>
+          </article>
+        </section>
+      </div>
+    </aside>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
 </html>
