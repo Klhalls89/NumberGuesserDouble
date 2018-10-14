@@ -11,89 +11,101 @@
       <h1 class="title">Number<span class="title-span">Guesser</span></h1>
       <p class="subtitle">Ulitmate Challanger Edition</p> 
     </header>
-    <main>
-      <div class="play-half">
-        <section class="input-range">
-          <p>Set Range</p>
-          <div class="min-max-div">
-            <h2>Min Range</h2>
-            <input type="number" class="min-number">
-          </div>
-          <div class="min-max-div">
-            <h2>Max Range</h2>
-            <input type="number" class="max-number">
-          </div>
-          <button class="update-btn">UPDATE</button>
-          <p id="hidden" class="hiddenP">Your range is incorrect</p>
-        </section>
-        <section class="guess-sect" >
-          <div class="range-feedback">
+    <div class="align-sides">
+      <main>
+        <div class="play-half">
+          <section class="input-sect">
+            <p>Set Range</p>
+            <article class="align-range">
+              <div class="input-div">
+                <h2>Min Range</h2>
+                <input type="number" class="min-number">
+              </div>
+              <div class="input-div">
+                <h2>Max Range</h2>
+                <input type="number" class="max-number">
+              </div>
+              <button class="update-btn">UPDATE</button>
+            </article>
+            <p id="hidden" class="hiddenP">Your range is incorrect</p>
+          </section>
+          <section class="guess-sect">
             <p>The Current Range is 
               <span class="range-span range-start">1</span> to 
               <span class="range-span range-end">100</span>
             </p>
-          </div>
-          <div class="input-guess">
-            <article class="chal-one-art">
-              <p>Challanger-One</p>
-              <h2>Name</h2>
-              <input type="username">
-              <h2>Guess</h2>
-              <input type="number" class="guess-input">
+            <div class="input-guess">
+              <p>Challenger-One</p>
+              <article class="challenger-art">
+                <div class="input-div">
+                  <h2>Name</h2>
+                  <input type="username">
+                </div>
+                <div class="input-div">
+                  <h2>Guess</h2>
+                  <input type="number" class="guess-input">
+                </div>
+              </article>
+              <p>Challenger-Two</p>
+              <article class="challenger-art">
+                 <div class="input-div">
+                  <h2>Name</h2>
+                  <input type="username">
+                </div>
+                <div class="input-div">
+                  <h2>Guess</h2>
+                  <input type="number" class="guess-input">
+                </div>
+              </article>
+              <article class="clear-reset">
+                <button class="submit-btn">Submit Guess</button>
+                <button id="reset-btn" disabled>Reset</button>
+                <button class="clear-btn" id="clear-disable" disabled>Clear</button>
+              </article>
+            </div>
+           </section>
+          <section class="score-sect">
+            <p class="latest-score">Latest Score</p>
+            <div class="align-score">
+              <article class="score-art">
+                <p class="challanger-name">Challanger One Name</p>
+                <p class="current-guess">Current Guess</p>
+                <p class="recent-guess">??</p>
+                <p class="guess-message">The game is afoot!</p>
+              </article>
+              <article class="score-art">
+                <p class="challanger-name">Challanger Two Name</p>
+                <p class="current-guess">Current Guess</p>
+                <p class="recent-guess">??</p>
+                <p class="guess-message">The game is afoot!</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+      <aside>
+        <div class="card-half">
+          <section class="card">
+            <article class="card-head">
+              <p class="chal1-name-update card-font">Challenger One Name</p>
+              <p>vs</p>
+              <p class="chal2-name-update card-font">Challenger Two Name</p>
             </article>
-            <article class="chal-two-art">
-              <p>Challanger-Two</p>
-              <h2>Name</h2>
-              <input type="username">
-              <h2>Guess</h2>
-              <input type="number" class="guess-input">
+            <article class="card-body">
+              <p>Challenger Winner Name</p>
+              <p>Winner</p>
             </article>
-            <article class="clear-reset">
-              <button class="submit-btn">Submit Guess</button>
-              <button id="reset-btn" disabled>Reset</button>
-              <button class="clear-btn" id="clear-disable" disabled>Clear</button>
+            <article class="card-foot">
+              <p class="num-guess-update card-font">#</p>
+              <p>Gusses</p>
+              <p class="num-minutes-update card-font">#</p>
+              <p>minutes</p>
+              <button>X</button>
             </article>
-          </div>
-         </section>
-        <section class="score-sect">
-          <p class="latest-score">Latest Score</p>
-          <article>
-            <p class="challanger-name">Challanger One Name</p>
-            <p class="current-guess">Current Guess</p>
-            <p class="recent-guess">??</p>
-            <p class="guess-message">The game is afoot!</p>
-          </article>
-          <article>
-            <p class="challanger-name">Challanger Two Name</p>
-            <p class="current-guess">Current Guess</p>
-            <p class="recent-guess">??</p>
-            <p class="guess-message">The game is afoot!</p>
-          </article>
-        </section>
-      </div>
-    </main>
-    <aside>
-      <div class="card-half">
-        <section class="card">
-          <article class="card-head">
-            <p>Challanger One Name</p>
-            <p>Vs</p>
-            <p>Challanger Two Name</p>
-          </article>
-          <article class="card-body">
-            <p>Challanger Winner Name</p>
-            <p>Winner</p>
-          </article>
-          <article class="card-foot">
-            <h3 class="num-guess-update">#</h3>
-            <h4>Gusses</h4>
-            <h3 class="num-minutes-update">#</h3>
-            <h4>minutes</h4>
-            <button>X</button>
-          </article>
-        </section>
-      </div>
-    </aside>
+          </section>
+        </div>
+      </aside>
+    </div>
   </body>
   <script type="text/javascript" src="script.js"></script>
 </html>
