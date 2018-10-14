@@ -10,7 +10,7 @@ var submitBtn = document.querySelector('.submit-btn');
 var clearBtn = document.querySelector('.clear-btn');
 var resetBtn = document.querySelector('#reset-btn');
 var recentGuess = document.querySelector('.recent-guess');
-var guessMessage = document.querySelector('.guess-message');
+var guessMessage = document.querySelector('.`');
 
 
 var guessParse = parseInt(guessInput.value);

@@ -12,87 +12,153 @@ main {
 }
 
 h1 {
+  text-align: center;
   color: #DD1972;
-  font-size: 30pt; 
+  font-size: 50px; 
   text-transform: uppercase;
   font-weight: 700;
 }
 
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  background-color: #404041; 
+}
+.align-sides{
+  display: flex;
+}
 .title{
   display: flex;
   flex-direction: row;
 }
 
-.title-span{
+.title-span {
   font-weight: 300;
 }
 
-.play-half{
+.play-half {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 500px;
   flex-direction: column;
   text-align: center;
+  width: 100%;
 }
 
-.input-range{
+.input-sect {
   display: flex;
   flex-direction: column;
+  
+  height: 150px;
 }
 
-.min-max-div{
+.align-range {
+  display: flex;
+}
+
+.input-sect,  
+.guess-sect,
+.score-sect {
+  background-color: #FFF;
+  border: 2px solid #DBDBDB;
+  width: 95%;
+  margin: 5px 20px;
+  padding: 10px;
+  text-align: left;
+}
+
+.input-div {
 display: inline-block;
+}
+
+.align-score {
+  display: flex;
+  justify-content: space-around;
+}
+
+.challenger-art{
+  display: flex;
+}
+
+.score-art {
+  text-align: center;
 }
 
 aside {
   width: 50%;
-  background-color: #404041;
+  background-color: #D1D2D4;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-left: 2px solid #abacad;
 }
 
-.card-half{
+.card-half {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   height: 500px;
-  justify-content: space-around;
-  align-content: center;
+  /*justify-content: center;*/
+  align-items: center;
   text-align: center;
 }
 
+.card {
+  background-color: #FFF;
+  border: 2px solid #abacad;
+  height: 200px;
+  width: 85%;
+}
+
+.card-body {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-head,
+.card-foot {
+  display: flex;
+  justify-content: space-around;
+  height: 25px;
+  font-size: 15px;
+}
+
+
+
+
 .guess-message {
-  color: #FFF;
+  color: #000;
   font-weight: 300;
-  font-size: 30pt;
+  font-size: 20px;
 }
 
 .recent-guess {
   color: #DD1972;
   font-weight: 700;
-  font-size: 150pt;
+  font-size: 50px;
 }
 
 .bottom-half {
   width: 90%;
 }
 
-.input-guess{
+.input-guess {
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
-  /*width: 90%;*/
-  /*height: 50vh;*/
 }
-.clear-reset{
-  display: flex;
-  
 
+.clear-reset {
+  display: flex;
 }
-.clear-btn #reset-btn{
+
+.clear-btn #reset-btn {
   width: 48%;
 }
 
