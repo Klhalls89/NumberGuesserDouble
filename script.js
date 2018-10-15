@@ -6,11 +6,14 @@ var updateBtn = document.querySelector('.update-btn');
 var rangeStart = document.querySelector('.range-start');
 var rangeEnd = document.querySelector('.range-end');
 var guessInput = document.querySelector('.guess-input');
+var guessInput2 = document.querySelector('.guess-input2');
 var submitBtn = document.querySelector('.submit-btn');
 var clearBtn = document.querySelector('.clear-btn');
 var resetBtn = document.querySelector('#reset-btn');
 var recentGuess = document.querySelector('.recent-guess');
-var guessMessage = document.querySelector('.`');
+var recentGuess2 = document.querySelector('.recent-guess2');
+var guessMessage = document.querySelector('.guess-message');
+var guessMessage2 = document.querySelector('.guess-message2');
 
 
 var guessParse = parseInt(guessInput.value);
@@ -21,8 +24,6 @@ var maxParse = parseInt(maxNum.value);
 console.log(genNum);
 
 
-// this function grab the value of the user guess upon a button click and update the inner text of our h4
-
 submitBtn.addEventListener('click', guessCaller);
 updateBtn.addEventListener('click', rangeChecker);
 resetBtn.addEventListener('click', resetGame);
@@ -30,14 +31,16 @@ clearBtn.addEventListener('click', clearFields);
 guessInput.addEventListener('input', enableClear);
 minNum.addEventListener('input', enableReset);
 maxNum.addEventListener('input', enableReset);
+
 // this function should take the user guess and compare it to the computer generated number. Then display appropriate message.
 function guessNumberUpdate(){
     recentGuess.innerText = guessInput.value;
-    console.log(recentGuess);
+    recentGuess2.innerText = guessInput2.value;
 }
 
   function guessMessageUpdate(){
     var parsedNum = parseInt(guessInput.value);
+    var parsedNum2 = parseInt(guessInput2.value);
     if(parsedNum < genNum){
     guessMessage.innerText = "That guess is too low!"
   } else if(parsedNum > genNum){
@@ -45,23 +48,51 @@ function guessNumberUpdate(){
   } else if(parsedNum === genNum){
     guessMessage.innerText = "BOOM!"
   };
+   if(parsedNum2 < genNum){
+    guessMessage2.innerText = "That guess is too low!"
+  } else if(parsedNum2 > genNum){
+    guessMessage2.innerText = "That guess is too high!"
+  } else if(parsedNum2 === genNum){
+    guessMessage2.innerText = "BOOM!"
+  };
+}
+
+function winnerRange(){
+  var parsedNum = parseInt(guessInput.value);
+  if (parsedNum === genNum){
+    minNum.value = parseInt(minNum.value) - 10;
+    maxNum.value = parseInt(maxNum.value) + 10;
+    genNum = genRanNum(minNum.value, maxNum.value);
+    rangeStart.innerText = minNum.value;
+    rangeEnd.innerText = maxNum.value;
+    guessInput.value = '';
+    console.log(genNum);
+    guessMessage.innerText = 'A new, harder game has started!';
+  }
 }
 
 function guessChecker(){
   emptyGuess();
   var guessParse = parseInt(guessInput.value);
+  var guessParse2 = parseInt(guessInput2.value);
   var minParse = parseInt(minNum.value) || 1;
   var maxParse = parseInt(maxNum.value) || 100;
 
   if(guessParse < minParse || guessParse > maxParse){
-      guessMessage.innerText = "ERROR! Guess is outside of set range.";
+      guessMessage.innerText = "NOPE! Guess is out of range!";
+    } else {
+      guessMessageUpdate();
+    };
+
+    if(guessParse2 < minParse || guessParse2 > maxParse){
+      guessMessage2.innerText = "NOPE! Guess is out of range!";
     } else {
       guessMessageUpdate();
     };
 }
 
 function emptyGuess(){
-  if(guessInput.value === ''){
+  if(guessInput.value === '' || guessInput2.value === ''){
     alert('Please enter a number for your guess!')
   }
 }
@@ -70,6 +101,7 @@ function emptyGuess(){
 function guessCaller(){
   guessChecker();
   guessNumberUpdate();
+  winnerRange();
 }
 
 // in guess input check if entered value is less then min range or greater then max range to display message indicating the error
