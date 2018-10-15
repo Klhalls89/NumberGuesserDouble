@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1 class="title">Number<span class="title-span">Guesser</span></h1>
-      <p class="subtitle">Ulitmate Challanger Edition</p> 
+      <p class="subtitle"><span>ULTIMATE CHALLENGER EDITION</span></p>
     </header>
     <div class="align-sides">
       <main>
@@ -30,16 +30,16 @@
             <p id="hidden" class="hiddenP">Your range is incorrect</p>
           </section>
           <section class="guess-sect">
-            <p>The Current Range is 
+            <p class="current-range">The Current Range is 
               <span class="range-span range-start">1</span> to 
               <span class="range-span range-end">100</span>
             </p>
             <div class="input-guess">
               <p class="sect-header">Challenger 1</p>
               <article class="challenger-art">
-                <div class="input-div">
+                <div class="name-div">
                   <h2>Name</h2>
-                  <input type="username">
+                  <input type="username" class="name-input">
                 </div>
                 <div class="input-div">
                   <h2>Guess</h2>
@@ -48,9 +48,9 @@
               </article>
               <p class="sect-header">Challenger 2</p>
               <article class="challenger-art">
-                 <div class="input-div">
+                 <div class="name-div">
                   <h2>Name</h2>
-                  <input type="username">
+                  <input type="username" class="name-input">
                 </div>
                 <div class="input-div">
                   <h2>Guess</h2>
@@ -67,7 +67,7 @@
           <section class="score-sect">
             <p class="sect-header latest-score">Latest Score</p>
             <div class="align-score">
-              <article class="score-art">
+              <article class="score-art score1">
                 <p class="challanger-name">Challanger 1 Name</p>
                 <p class="current-guess">Current Guess</p>
                 <p class="recent-guess">??</p>
@@ -87,20 +87,24 @@
         <div class="card-half">
           <section class="card">
             <article class="card-head">
-              <p class="chal1-name-update card-font">Challenger 1 Name</p>
+              <p class="chal1-name-update">Challenger 1 Name</p>
               <p>vs</p>
-              <p class="chal2-name-update card-font">Challenger 2 Name</p>
+              <p class="chal2-name-update">Challenger 2 Name</p>
             </article>
             <article class="card-body">
-              <p>Challenger 1 Name/p>
+              <p class="winner-name-update">Challenger 1 Name</p>
               <p>Winner</p>
             </article>
             <article class="card-foot">
-              <p class="num-guess-update card-font">#</p>
-              <p>Gusses</p>
-              <p class="num-minutes-update card-font">#</p>
-              <p>minutes</p>
-              <button>X</button>
+              <div class="card-foot-div">
+                <p class="num-guess-update">#</p>
+                <p>guesses</p>
+              </div>
+              <div class="card-foot-div">
+                <p class="num-minutes-update">#</p>
+                <p>minutes</p>
+              </div>
+              <button class="delete-btn">X</button>
             </article>
           </section>
         </div>

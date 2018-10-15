@@ -19,6 +19,10 @@ h1 {
   font-weight: 700;
 }
 
+p {
+  color: #6E6E6E;
+}
+
 header{
   display: flex;
   flex-direction: column;
@@ -26,11 +30,6 @@ header{
   height: 100px;
   background-color: #404041; 
 }
-
-.align-sides{
-  display: flex;
-}
-
 .title{
   display: flex;
   flex-direction: row;
@@ -38,6 +37,25 @@ header{
 
 .title-span {
   font-weight: 300;
+}
+
+.subtitle {
+  color: #FFF;
+  margin-top: 10px;
+  font-weight: 300;
+  width: 30%; 
+  text-align: center; 
+  border-bottom: 1px solid #FFF; 
+  line-height: 0.1em;
+}
+
+.subtitle span{
+  background :#404041; 
+  padding:0 10px; 
+}
+
+.align-sides{
+  display: flex;
 }
 
 .play-half {
@@ -50,10 +68,11 @@ header{
   height: 100%;
 }
 
-.input-sect {
-  display: flex;
-  flex-direction: column;
-  height: 20%;
+.sect-header {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0px;
+  color: #6E6E6E;
 }
 
 .align-range {
@@ -62,13 +81,8 @@ header{
   align-items: center;
 }
 
-.sect-header {
-  font-size: 20px;
-  font-weight: 700;
-}
-
 h2 {
-  margin: 10px 0px 5px 0px;
+  margin: 0px 0px 5px 0px;
 }
 
 input {
@@ -81,44 +95,86 @@ input {
 .score-sect {
   background-color: #FFF;
   border: 2px solid #DBDBDB;
-  width: 95%;
+  width: 92%;
   margin: 5px 20px;
   padding: 10px;
   text-align: left;
 }
 
+.input-sect {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+}
+
 .guess-sect {
   height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .score-sect {
   height: 30%;
 }
 
+.current-range{
+  padding: 10px 0px 0px 0px;;
+}
+
 .input-div {
-display: inline-block;
-font-size: 18px;
-font-weight: 300;
-width: 30%;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 300;
+  width: 30%;
 }
 
 .min-number,
 .max-number {
-width: 100%;
-}
-
-.update-btn {
-  color: #FFF;
-  background-color: #6e6e6e;
-  margin-top: 30px;
+  width: 100%;
 }
 
 button {
   width: 20%;
   border-radius: 30px;
   height: 35px;
+  width: 30%;
   background-color: #D0D2D3;  
   color: #FFF;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.update-btn{
+  margin-top: 30px;
+  background-color: #6E6E6E;
+}
+
+.submit-btn {
+  background-color: #6E6E6E;
+
+}
+
+.range-span {
+  font-weight: 700;
+  text-decoration: underline;
+  color: #6E6E6E;
+}
+
+.name-div{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 300;
+  width: 60%;
+  margin-right: 20px;
+}
+
+.name-input {
+  font-weight: 300;
+  width: 100%;
 
 }
 
@@ -129,10 +185,30 @@ button {
 
 .challenger-art{
   display: flex;
+  width: 100%;
 }
 
 .score-art {
   text-align: center;
+  width: 50%;
+}
+
+.score1 {
+  border-right: 2px solid #D0D2D3;
+}
+
+.challanger-name {
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: 5px;
+  color: #6E6E6E;
+}
+
+.recent-guess {
+  color: #DD1972;
+  font-weight: 700;
+  font-size: 75px;
+  padding: 10px 0px;
 }
 
 aside {
@@ -150,7 +226,6 @@ aside {
   flex-direction: column;
   width: 100%;
   height: 500px;
-  /*justify-content: center;*/
   align-items: center;
   text-align: center;
 }
@@ -159,27 +234,57 @@ aside {
   background-color: #FFF;
   border: 2px solid #abacad;
   height: 200px;
-  width: 85%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
 }
 
+
 .card-body {
-  height: 150px;
+  height: 125px;
+  width: 80%;
+  font-size: 30px;
+  font-weight: 300;
+  color: #6E6E6E;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  border-top: 2px solid #D0D2D3;
+  border-bottom: 2px solid #D0D2D3;
 }
 
 .card-head,
 .card-foot {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 25px;
   font-size: 15px;
+  padding: 5px 0px;
+}
+
+.chal1-name-update,
+.chal2-name-update {
+  font-weight: 700;
+  padding: 0px 20px;
+  color: #6E6E6E;
 }
 
 
+.winner-name-update {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
 
+.num-guess-update,
+.num-minutes-update {
+  font-weight: 700;
+  color: #6E6E6E;
+  padding-right: 3px;
+}
 
 .guess-message {
   color: #000;
@@ -187,30 +292,20 @@ aside {
   font-size: 20px;
 }
 
-.recent-guess {
-  color: #DD1972;
-  font-weight: 700;
-  font-size: 50px;
-}
-
-.bottom-half {
-  width: 90%;
-}
-
-.input-guess {
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.clear-reset {
+.card-foot-div{
   display: flex;
+  width: 40%;
+  padding: 0px 20px;
 }
-
-.clear-btn #reset-btn {
-  width: 48%;
+.delete-btn{
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  background-color: #6E6E6E;
 }
 
 .hiddenP {
   display: none;
+
 }
