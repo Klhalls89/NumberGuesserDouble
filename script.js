@@ -19,8 +19,8 @@ var nameInput2 = document.querySelector('.name-input2');
 var challengerName = document.querySelector('.challenger-name');
 var challengerName2 = document.querySelector('.challenger-name2');
 var guessParse = parseInt(guessInput.value);
-var minParse = parseInt(minNum.value);
-var maxParse = parseInt(maxNum.value);
+// var minParse = parseInt(minNum.value);
+// var maxParse = parseInt(maxNum.value);
 
 
 console.log(genNum);
@@ -59,18 +59,24 @@ function guessNumberUpdate(){
   };
 }
 
+// minNum value = 1 to start and maxNum value = 100 to start unless user input is given. Then when there is a winner the default values of MinNum and MaxNum should update by -10 and + 10
+
+
+
 function winnerRange(){
   var parsedNum = parseInt(guessInput.value);
-  if (parsedNum === genNum){
-    minNum.value = parseInt(minNum.value) - 10;
-    maxNum.value = parseInt(maxNum.value) + 10;
-    genNum = genRanNum(minNum.value, maxNum.value);
-    rangeStart.innerText = minNum.value;
-    rangeEnd.innerText = maxNum.value;
+  var parsedNum2 = parseInt(guessInput2.value);
+  if (parsedNum === genNum || parsedNum2 === genNum){
+    minNum = parseInt(rangeStart.innerText) - 10;
+    maxNum = parseInt(rangeEnd.innerText) + 10;
+    genNum = genRanNum(minNum, maxNum);
+    rangeStart.innerText = minNum;
+    rangeEnd.innerText = maxNum;
     guessInput.value = '';
     guessInput2.value = '';
     console.log(genNum);
     guessMessage.innerText = 'A new, harder game has started!';
+    guessMessage2.innerText = 'A new, harder game has started!';
   }
 }
 
@@ -106,14 +112,24 @@ function guessCaller(){
   guessNumberUpdate();
   winnerRange();
   challengerNameUpdate();
+
 }
 
 // in guess input check if entered value is less then min range or greater then max range to display message indicating the error
 
 function challengerNameUpdate(){
-  challengerName.innerText = nameInput.value;
-  challengerName2.innerText = nameInput2.value;
+  challengerName.innerText = nameInput.value || 'Challenger 1';
+  challengerName2.innerText = nameInput2.value || 'Challenger 2';
 }
+
+// This should change the names in the card head but doesn't work yet:
+
+// function cardNameUpdate(){
+//   var chal1NameUpdate = document.querySelector('chal1-name-update');
+//   var chal2NameUpdate = document.querySelector('chal2-name-update');
+//   chal1NameUpdate = challengerName.innerText;
+//   chal2NameUpdate = challengerName2.innerText;
+// }
 
 
 
@@ -131,8 +147,8 @@ function customRange(){
 
 function genRanNum(min, max){
   // Changing the string values of min and max to numberic values.
-  min = parseInt(min);
-  max = parseInt(max);
+    min = parseInt(min);
+    max = parseInt(max);
   return Math.ceil(Math.random() * (max - min) + min);
 };
 
@@ -186,8 +202,6 @@ function emptyMinMax(){
 function clearFields(){
   guessInput.value = '';
   guessInput2.value = '';
-  minNum.value = '';
-  maxNum.value = '';
   document.getElementById('clear-disable').setAttribute('disabled', 'disabled');
 }
 
@@ -195,6 +209,8 @@ function enableClear(){
   document.getElementById('clear-disable').removeAttribute('disabled');
   enableReset();
 }
+
+
 
 
 
