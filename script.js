@@ -64,6 +64,7 @@ function guessNumberUpdate(){
 
 
 function winnerRange(){
+  
   var parsedNum = parseInt(guessInput.value);
   var parsedNum2 = parseInt(guessInput2.value);
   if (parsedNum === genNum || parsedNum2 === genNum){
@@ -72,11 +73,12 @@ function winnerRange(){
     genNum = genRanNum(minNum, maxNum);
     rangeStart.innerText = minNum;
     rangeEnd.innerText = maxNum;
+    createCard();
     guessInput.value = '';
     guessInput2.value = '';
     console.log(genNum);
-    guessMessage.innerText = 'A new, harder game has started!';
-    guessMessage2.innerText = 'A new, harder game has started!';
+    // guessMessage.innerText = 'A new, harder game has started!';
+    // guessMessage2.innerText = 'A new, harder game has started!';
   }
 }
 
@@ -211,10 +213,47 @@ function enableClear(){
 }
 
 
+function winnerName() {
+  var winner = '';
+  if(guessMessage === 'BOOM!'){
+    winner = nameInput.value;
+  }else if (guessMessage2 === 'BOOM!'){
+    winner = nameInput2.value;
+  }
+  return winner;
+}
 
 
 
-
+function createCard () {
+var challenger1 = nameInput.value || 'Challenger 1';
+var challenger2 = nameInput2.value || 'Challenger 2';
+var cardHalf = document.querySelector('.card-half');
+var nameOfWinner = winnerName();
+cardHalf.insertAdjacentHTML('afterbegin', 
+ `<section class="card">
+  <article class="card-head">
+    <p class="chal1-name-update">${challenger1}</p>
+    <p>vs</p>
+    <p class="chal2-name-update">${challenger2}</p>
+  </article>
+  <article class="card-body">
+    <p class="winner-name-update">${nameOfWinner}</p>
+    <p>Winner</p>
+  </article>
+  <article class="card-foot">
+    <div class="card-foot-div">
+      <p class="num-guess-update">#</p>
+      <p>guesses</p>
+    </div>
+    <div class="card-foot-div">
+      <p class="num-minutes-update">#</p>
+      <p>minutes</p>
+    </div>
+    <button class="delete-btn">X</button>
+  </article>
+</section>`)
+}
 
 
 
