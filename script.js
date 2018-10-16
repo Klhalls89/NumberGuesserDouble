@@ -14,8 +14,10 @@ var recentGuess = document.querySelector('.recent-guess');
 var recentGuess2 = document.querySelector('.recent-guess2');
 var guessMessage = document.querySelector('.guess-message');
 var guessMessage2 = document.querySelector('.guess-message2');
-
-
+var nameInput = document.querySelector('.name-input');
+var nameInput2 = document.querySelector('.name-input2');
+var challengerName = document.querySelector('.challenger-name');
+var challengerName2 = document.querySelector('.challenger-name2');
 var guessParse = parseInt(guessInput.value);
 var minParse = parseInt(minNum.value);
 var maxParse = parseInt(maxNum.value);
@@ -66,6 +68,7 @@ function winnerRange(){
     rangeStart.innerText = minNum.value;
     rangeEnd.innerText = maxNum.value;
     guessInput.value = '';
+    guessInput2.value = '';
     console.log(genNum);
     guessMessage.innerText = 'A new, harder game has started!';
   }
@@ -102,10 +105,15 @@ function guessCaller(){
   guessChecker();
   guessNumberUpdate();
   winnerRange();
+  challengerNameUpdate();
 }
 
 // in guess input check if entered value is less then min range or greater then max range to display message indicating the error
 
+function challengerNameUpdate(){
+  challengerName.innerText = nameInput.value;
+  challengerName2.innerText = nameInput2.value;
+}
 
 
 
@@ -133,12 +141,17 @@ function resetGame(event){
   minNum.value = '';
   maxNum.value = '';
   guessInput.value = '';
+  guessInput2.value = '';
+  nameInput.value = '';
+  nameInput2.value = '';
   genNum = genRanNum(1, 100);
   console.log(genNum);
   rangeStart.innerText = 1;
   rangeEnd.innerText = 100;
-  guessMessage.innerText = "A new game has started!";
-  recentGuess.innerText = "??";
+  guessMessage.innerText = 'A new game has started!';
+  guessMessage2.innerText = 'A new game has started!';
+  recentGuess.innerText = '??';
+  recentGuess2.innerText = '??';
   disableReset();
 }
 
@@ -172,6 +185,9 @@ function emptyMinMax(){
 
 function clearFields(){
   guessInput.value = '';
+  guessInput2.value = '';
+  minNum.value = '';
+  maxNum.value = '';
   document.getElementById('clear-disable').setAttribute('disabled', 'disabled');
 }
 

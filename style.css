@@ -172,7 +172,8 @@ button {
   margin-right: 20px;
 }
 
-.name-input {
+.name-input,
+.name-input2 {
   font-weight: 300;
   width: 100%;
 
