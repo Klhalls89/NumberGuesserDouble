@@ -172,7 +172,8 @@ button {
   margin-right: 20px;
 }
 
-.name-input {
+.name-input,
+.name-input2 {
   font-weight: 300;
   width: 100%;
 
@@ -204,7 +205,8 @@ button {
   color: #6E6E6E;
 }
 
-.recent-guess {
+.recent-guess,
+.recent-guess2 {
   color: #DD1972;
   font-weight: 700;
   font-size: 75px;
@@ -286,7 +288,8 @@ aside {
   padding-right: 3px;
 }
 
-.guess-message {
+.guess-message,
+.guess-message2 {
   color: #000;
   font-weight: 300;
   font-size: 20px;
