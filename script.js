@@ -19,6 +19,7 @@ var nameInput2 = document.querySelector('.name-input2');
 var challengerName = document.querySelector('.challenger-name');
 var challengerName2 = document.querySelector('.challenger-name2');
 var guessParse = parseInt(guessInput.value);
+var cardHalf = document.querySelector('.card-half');
 // var minParse = parseInt(minNum.value);
 // var maxParse = parseInt(maxNum.value);
 
@@ -33,6 +34,17 @@ clearBtn.addEventListener('click', clearFields);
 guessInput.addEventListener('input', enableClear);
 minNum.addEventListener('input', enableReset);
 maxNum.addEventListener('input', enableReset);
+
+cardHalf.addEventListener('click', function(event){
+  if(event.target.classList.contains('delete-btn')) {
+    deleteCard(event);
+  }
+});
+
+function deleteCard(event){
+  event.target.closest('.card').remove();
+}
+
 
 // this function should take the user guess and compare it to the computer generated number. Then display appropriate message.
 function guessNumberUpdate(){
@@ -112,6 +124,7 @@ function emptyGuess(){
 function guessCaller(){
   guessChecker();
   guessNumberUpdate();
+  countTracker();
   winnerRange();
   challengerNameUpdate();
   clearFields();
@@ -234,13 +247,30 @@ function winnerName() {
   return winner;
 }
 
+// count the number of times the submit button is hit before winnning
+// update the card with the count number
 
+
+var counter = 0;
+function countTracker() {
+  console.log(counter);
+  counter++
+  console.log(counter, 'post++');
+}
+
+function countReset(){
+  if(guessMessage.innerText === 'BOOM!' 
+    || guessMessage2.innerText === 'BOOM!'){
+    counter = 0;
+}
+}
 
 function createCard () {
 var challenger1 = nameInput.value || 'Challenger 1';
 var challenger2 = nameInput2.value || 'Challenger 2';
 var cardHalf = document.querySelector('.card-half');
 var nameOfWinner = winnerName();
+// var winCounter = counter;
 cardHalf.insertAdjacentHTML('afterbegin', 
  `<section class="card">
   <article class="card-head">
@@ -254,7 +284,7 @@ cardHalf.insertAdjacentHTML('afterbegin',
   </article>
   <article class="card-foot">
     <div class="card-foot-div">
-      <p class="num-guess-update">#</p>
+      <p class="num-guess-update">${counter}</p>
       <p>guesses</p>
     </div>
     <div class="card-foot-div">
@@ -264,11 +294,7 @@ cardHalf.insertAdjacentHTML('afterbegin',
     <button class="delete-btn">X</button>
   </article>
 </section>`)
-}
 
-
-
-function guessCounter() {
-
+countReset();
 }
 
