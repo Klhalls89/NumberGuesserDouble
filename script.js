@@ -114,7 +114,7 @@ function guessCaller(){
   guessNumberUpdate();
   winnerRange();
   challengerNameUpdate();
-
+  clearFields();
 }
 
 // in guess input check if entered value is less then min range or greater then max range to display message indicating the error
@@ -176,11 +176,13 @@ function resetGame(event){
 function enableReset(){
   if(minNum.value !== '' || maxNum.value !== '' || guessInput.value !== ''){
     document.getElementById('reset-btn').removeAttribute('disabled');
+    document.getElementById('reset-btn').classList.add('enabled-state');
   } 
 }
 
 function disableReset(){
   document.getElementById('reset-btn').setAttribute('disabled', 'disabled');
+  document.getElementById('reset-btn').classList.remove('enabled-state');
 }
 // if player enters a min or max or guess, the reset button should be enabled. Otherwise the button should be disabled. 
 
@@ -195,31 +197,40 @@ function rangeChecker(){
     }
 }
 
-function emptyMinMax(){
+function emptyMinMax() {
   if(minNum.value === '' || maxNum.value === ''){
     alert('Please enter a minimum AND maximum number!');
   }
 }
 
-function clearFields(){
+function clearFields() {
   guessInput.value = '';
   guessInput2.value = '';
-  document.getElementById('clear-disable').setAttribute('disabled', 'disabled');
+  disableClear();
 }
 
-function enableClear(){
+function enableClear() {
   document.getElementById('clear-disable').removeAttribute('disabled');
-  enableReset();
+  document.getElementById('clear-disable').classList.add('enabled-state');
+  enableReset();  
+}
+
+function disableClear() {
+  document.getElementById('clear-disable').setAttribute('disabled', 'disabled');
+  document.getElementById('clear-disable').classList.remove('enabled-state');
 }
 
 
 function winnerName() {
-  var winner = '';
-  if(guessMessage === 'BOOM!'){
-    winner = nameInput.value;
-  }else if (guessMessage2 === 'BOOM!'){
-    winner = nameInput2.value;
+  var challenger1 = nameInput.value || 'Challenger 1';
+  var challenger2 = nameInput2.value || 'Challenger 2';
+  var winner;
+  if(guessMessage.innerText === 'BOOM!'){
+    winner = challenger1;
+  }else if (guessMessage2.innerText === 'BOOM!'){
+    winner = challenger2;
   }
+  console.log(winner);
   return winner;
 }
 
@@ -256,4 +267,8 @@ cardHalf.insertAdjacentHTML('afterbegin',
 }
 
 
+
+function guessCounter() {
+
+}
 
