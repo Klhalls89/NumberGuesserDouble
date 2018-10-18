@@ -20,6 +20,7 @@ h1 {
 
 p {
   color: #6E6E6E;
+  font-size: 15px;
 }
 
 header {
@@ -83,6 +84,7 @@ header {
 .align-range {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -330,7 +332,6 @@ aside {
 
 .hiddenP {
   display: none;
-
 }
 
 .enabled-state {

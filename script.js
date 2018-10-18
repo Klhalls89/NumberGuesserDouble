@@ -206,8 +206,13 @@ function rangeChecker(){
   if( minParse > maxParse ){
   document.getElementById('hidden').classList.remove('hiddenP');
    } else {
+    removeRangeError();
     customRange();
     }
+}
+
+function removeRangeError (){
+  document.getElementById('hidden').classList.add('hiddenP');
 }
 
 function emptyMinMax() {
