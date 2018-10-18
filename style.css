@@ -3,42 +3,33 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-main {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  text-align: center;
-  color: #DD1972;
-  font-size: 50px; 
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-p {
-  color: #6E6E6E;
-  font-size: 15px;
-}
+/*begin header styles*/
 
 header {
+  align-items: center;
+  background-color: #404041; 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;  
   height: 100px;
-  background-color: #404041; 
+  justify-content: center;  
 }
 
-.title{
+.title {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
   width: 30%;
-  height: 100%;
+}
+
+
+h1 {
+  color: #DD1972;
+  font-size: 50px; 
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .title-span {
@@ -46,13 +37,13 @@ header {
 }
 
 .subtitle {
-  color: #FFF;
-  margin-top: 10px;
-  font-weight: 300;
-  width: 420px  ; 
-  text-align: center; 
   border-bottom: 1px solid #FFF; 
+  color: #FFF;
+  font-weight: 300;
   line-height: 0.1em;
+  margin-top: 10px;
+  text-align: center; 
+  width: 420px  ; 
 }
 
 .subtitle span{
@@ -60,25 +51,56 @@ header {
   padding:0 10px; 
 }
 
-.align-sides{
+.align-sides {
   display: flex;
+}
+
+/*begin main styles*/
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
 }
 
 .play-half {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
   text-align: center;
   width: 100%;
-  height: 100%;
+}
+
+.input-sect {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+}
+
+.input-sect,  
+.guess-sect,
+.score-sect {
+  background-color: #FFF;
+  border: 2px solid #DBDBDB;
+  margin: 5px 20px;
+  padding: 10px;
+  text-align: left;
+  width: 92%;
+}
+
+p {
+  color: #6E6E6E;
+  font-size: 15px;
 }
 
 .sect-header {
+  color: #6E6E6E;
   font-size: 20px;
   font-weight: 700;
   margin: 10px 0px;
-  color: #6E6E6E;
 }
 
 .align-range {
@@ -89,50 +111,6 @@ header {
 
 h2 {
   margin: 0px 0px 5px 0px;
-}
-
-input {
-  height: 35px;
-  border: 2px solid #DBDBDB;
-}
-
-.input-sect,  
-.guess-sect,
-.score-sect {
-  background-color: #FFF;
-  border: 2px solid #DBDBDB;
-  width: 92%;
-  margin: 5px 20px;
-  padding: 10px;
-  text-align: left;
-}
-
-.input-sect {
-  display: flex;
-  flex-direction: column;
-  height: 20%;
-}
-
-.guess-sect {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.score-sect {
-  height: 30%;
-}
-
-.current-range{
-  padding: 10px 0px 0px 0px;;
-}
-
-.input-div {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 300;
-  width: 30%;
 }
 
 .min-number,
@@ -161,28 +139,43 @@ button:active {
   background-color: #DD1972;
 }
 
-.update-btn{
-  margin-top: 30px;
-  background-color: #6E6E6E;
+button:disabled,
+button[disabled] {
+  background-color: #D1D2D4; 
 }
 
-.submit-btn {
+.update-btn {
   background-color: #6E6E6E;
+  margin-top: 30px;
+}
 
+.hiddenP {
+  display: none;
+}
+
+.guess-sect {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: center;
+}
+
+.current-range {
+  padding: 10px 0px 0px 0px;;
 }
 
 .range-span {
+  color: #6E6E6E;
   font-weight: 700;
   text-decoration: underline;
-  color: #6E6E6E;
 }
 
-.name-div{
+.name-div {
   display: inline-block;
   font-size: 18px;
   font-weight: 300;
-  width: 60%;
   margin-right: 20px;
+  width: 60%;
 }
 
 .name-input,
@@ -191,9 +184,29 @@ button:active {
   width: 100%;
 }
 
+.input-div {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 300;
+  width: 30%;
+}
+
+input {
+  border: 2px solid #DBDBDB;
+  height: 35px;
+}
+
 .guess-input,
 .guess-input2 {
   width: 100%;
+}
+
+.submit-btn {
+  background-color: #6E6E6E;
+}
+
+.score-sect {
+  height: 30%;
 }
 
 .align-score {
@@ -206,200 +219,205 @@ button:active {
   width: 50%;
 }
 
+.recent-guess,
+.recent-guess2 {
+  color: #DD1972;
+  font-size: 75px;
+  font-weight: 700;
+  padding: 10px 0px;
+}
+
+.guess-message,
+.guess-message2 {
+  color: #000;
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .score1 {
   border-right: 2px solid #D0D2D3;
 }
 
-.challanger-name {
-  font-weight: 700;
-  font-size: 16px;
-  padding-bottom: 5px;
+.challenger-name {
   color: #6E6E6E;
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 5px;
 }
 
-.recent-guess,
-.recent-guess2 {
-  color: #DD1972;
+.challenger-name, 
+.challenger-name2 {
+  color: #6E6E6E;
+  font-size: 20px;
   font-weight: 700;
-  font-size: 75px;
-  padding: 10px 0px;
+  padding-bottom: 5px;
 }
+
+/*begin aside styles*/
 
 aside {
-  width: 50%;
+  align-items: center;
   background-color: #D1D2D4;
-/*  height: 100vh;*/
+  border-left: 2px solid #abacad;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-left: 2px solid #abacad;
+  width: 50%;
 }
 
 .card-half {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100%;
-  align-items: center;
-  text-align: center;
   overflow: hidden;
+  text-align: center;
+  width: 100%;
 }
 
 .card {
+  align-items: center;
   background-color: #FFF;
   border: 2px solid #abacad;
+  display: flex;
+  flex-direction: column;
   height: 200px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-transform: uppercase;
   margin: 5px;
-}
-
-
-.card-body {
-  height: 125px;
-  width: 80%;
-  font-size: 30px;
-  font-weight: 300;
-  color: #6E6E6E;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-top: 2px solid #D0D2D3;
-  border-bottom: 2px solid #D0D2D3;
+  text-transform: uppercase;
+  width: 90%;
 }
 
 .card-head,
 .card-foot {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 25px;
+  display: flex;
   font-size: 15px;
+  height: 25px;
+  justify-content: center;
   padding: 5px 0px;
+  width: 100%;
 }
 
 .chal1-name-update,
 .chal2-name-update {
+  color: #6E6E6E;
   font-weight: 700;
   padding: 0px 20px;
-  color: #6E6E6E;
 }
 
+.card-body {
+  border-bottom: 2px solid #D0D2D3;
+  border-top: 2px solid #D0D2D3;
+  color: #6E6E6E;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-weight: 300;
+  height: 125px;
+  justify-content: center;
+  width: 80%;
+}
 
 .winner-name-update {
   font-weight: 700;
   padding-bottom: 10px;
 }
 
+.card-foot-div {
+  display: flex;
+  padding: 0px 20px;
+  width: 40%;
+}
+
 .num-guess-update,
 .num-minutes-update {
-  font-weight: 700;
   color: #6E6E6E;
+  font-weight: 700;
   padding-right: 3px;
 }
 
-.guess-message,
-.guess-message2 {
-  color: #000;
-  font-weight: 300;
-  font-size: 20px;
-}
-
-.challenger-name, 
-.challenger-name2 {
-  font-weight: 700;
-  font-size: 20px;
-  padding-bottom: 5px;
-  color: #6E6E6E;
-}
-
-.card-foot-div{
-  display: flex;
-  width: 40%;
-  padding: 0px 20px;
-}
-.delete-btn{
+.delete-btn {
+  background-color: #6E6E6E;
   border-radius: 100%;
-  width: 25px;
   height: 25px;
   margin: 5px;
-  background-color: #6E6E6E;
+  width: 25px;
 }
 
-.hiddenP {
-  display: none;
-}
 
 .enabled-state {
   background-color: #6E6E6E;
 }
 
+/*begin media queries*/
 
-@media only screen and (max-width: 945px){
-  button {
-    display:block;
-    width: 90%;
-    }
 
-  .align-range {
-    flex-direction: column;
-  }
+@media only screen and (max-width: 945px) {
+  
+.play-half {
+  height: auto;
+}
 
-  .play-half {
-    height: auto;
-  }
+.align-range {
+  flex-direction: column;
+}
 
-  .input-div,
-  .name-div {
+button {
   display: block;
   width: 90%;
-  }
 }
 
-@media only screen and (max-width: 850px){
-  .align-score {
-    display: block;
-  }
-  .score-art{
-    width: 90%;
-    margin: 10px;
-    padding: 5px;
-  }
-  .score1 {
-    border-right: none;
-    border-bottom: 2px solid #D0D2D3;
-  }
+.input-div,
+.name-div {
+  display: block;
+  width: 90%;
 }
 
-@media only screen and (max-width: 585px){
-  .align-sides {
-    display: block;
+}
+
+@media only screen and (max-width: 850px) {
+
+.align-score {
+  display: block;
   }
-  main,
-  aside {
-    width: 100%;
-  }
-  .card {
-    width: 95.5%;
-  }
+
+.score-art {
+  margin: 10px;
+  padding: 5px;
+  width: 90%;
+}
+
+.score1 {
+  border-right: none;
+  border-bottom: 2px solid #D0D2D3;
+}
+
+}
+
+@media only screen and (max-width: 585px) {
+
+.align-sides {
+  display: block;
+}
+
+main,
+aside {
+  width: 100%;
+}
+
+.card {
+  width: 95.5%;
+}
+
 }
 
 @media only screen and (max-width: 440px){
-  h1{
+
+h1{
     font-size: 30px;
-  }
-  .subtitle {
+}
+.subtitle {
     font-size: 12px;
-    width: 26k0px;
-  }
+    width: 260px;
 }
 
-
-
-
-
-
+}
