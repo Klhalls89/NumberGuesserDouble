@@ -5,7 +5,6 @@ body {
 
 main {
   width: 50%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +26,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
   height: 100px;
   background-color: #404041; 
 }
@@ -84,7 +83,6 @@ header {
 .align-range {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 h2 {
@@ -141,17 +139,16 @@ input {
 }
 
 button {
-  width: 20%;
-  border-radius: 30px;
-  height: 35px;
-  width: 30%;
   background-color: #D0D2D3;  
+  border-radius: 30px;
   color: #FFF;
-  text-transform: uppercase;
-  margin-top: 10px;
-  margin-right: 10px;
   font-size: 15px;
   font-weight: 700;
+  height: 35px;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  width: 30%;
 }
 
 button:hover {
@@ -190,17 +187,16 @@ button:active {
 .name-input2 {
   font-weight: 300;
   width: 100%;
+}
 
+.guess-input,
+.guess-input2 {
+  width: 100%;
 }
 
 .align-score {
   display: flex;
   justify-content: space-around;
-}
-
-.challenger-art{
-  display: flex;
-  width: 100%;
 }
 
 .score-art {
@@ -230,7 +226,7 @@ button:active {
 aside {
   width: 50%;
   background-color: #D1D2D4;
-  height: 100vh;
+/*  height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,6 +252,7 @@ aside {
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
+  margin: 5px;
 }
 
 
@@ -339,3 +336,69 @@ aside {
 .enabled-state {
   background-color: #6E6E6E;
 }
+
+
+@media only screen and (max-width: 945px){
+  button {
+    display:block;
+    width: 90%;
+    }
+
+  .align-range {
+    flex-direction: column;
+  }
+
+  .play-half {
+    height: auto;
+  }
+
+  .input-div,
+  .name-div {
+  display: block;
+  width: 90%;
+  }
+}
+
+@media only screen and (max-width: 850px){
+  .align-score {
+    display: block;
+  }
+  .score-art{
+    width: 90%;
+    margin: 10px;
+    padding: 5px;
+  }
+  .score1 {
+    border-right: none;
+    border-bottom: 2px solid #D0D2D3;
+  }
+}
+
+@media only screen and (max-width: 585px){
+  .align-sides {
+    display: block;
+  }
+  main,
+  aside {
+    width: 100%;
+  }
+  .card {
+    width: 95.5%;
+  }
+}
+
+@media only screen and (max-width: 440px){
+  h1{
+    font-size: 30px;
+  }
+  .subtitle {
+    font-size: 12px;
+    width: 26k0px;
+  }
+}
+
+
+
+
+
+
