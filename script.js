@@ -169,7 +169,7 @@ function guessChecker() {
     if(guessParse2 < minParse || guessParse2 > maxParse) {
       guessMessage2.innerText = 'NOPE! Guess is out of range!';
     } else {
-      guessMessageUpdate();
+      guessMessageUpdate2();
     };
 }
 
@@ -180,7 +180,6 @@ function guessNumberUpdate() {
 
 function guessMessageUpdate() {
   var parsedNum = parseInt(guessInput.value);
-  var parsedNum2 = parseInt(guessInput2.value);
   if(parsedNum < genNum) {
     guessMessage.innerText = 'That guess is too low!'
   } else if(parsedNum > genNum) {
@@ -188,7 +187,11 @@ function guessMessageUpdate() {
   } else if(parsedNum === genNum) {
     guessMessage.innerText = 'BOOM!'
   };
-   if(parsedNum2 < genNum) {
+ } 
+ 
+function guessMessageUpdate2 () {
+  var parsedNum2 = parseInt(guessInput2.value);
+  if(parsedNum2 < genNum) {
     guessMessage2.innerText = 'That guess is too low!'
   } else if(parsedNum2 > genNum) {
     guessMessage2.innerText = 'That guess is too high!'
