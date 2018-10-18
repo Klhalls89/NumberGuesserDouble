@@ -3,25 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-main {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  text-align: center;
-  color: #DD1972;
-  font-size: 50px; 
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-p {
-  color: #6E6E6E;
-  font-size: 15px;
-}
+/*begin header styles*/
 
 header {
   display: flex;
@@ -32,13 +14,22 @@ header {
   background-color: #404041; 
 }
 
-.title{
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 30%;
   height: 100%;
+}
+
+
+h1 {
+  text-align: center;
+  color: #DD1972;
+  font-size: 50px; 
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .title-span {
@@ -60,8 +51,17 @@ header {
   padding:0 10px; 
 }
 
-.align-sides{
+.align-sides {
   display: flex;
+}
+
+/*begin main styles*/
+
+main {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .play-half {
@@ -72,6 +72,28 @@ header {
   text-align: center;
   width: 100%;
   height: 100%;
+}
+
+.input-sect {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+}
+
+.input-sect,  
+.guess-sect,
+.score-sect {
+  background-color: #FFF;
+  border: 2px solid #DBDBDB;
+  width: 92%;
+  margin: 5px 20px;
+  padding: 10px;
+  text-align: left;
+}
+
+p {
+  color: #6E6E6E;
+  font-size: 15px;
 }
 
 .sect-header {
@@ -89,50 +111,6 @@ header {
 
 h2 {
   margin: 0px 0px 5px 0px;
-}
-
-input {
-  height: 35px;
-  border: 2px solid #DBDBDB;
-}
-
-.input-sect,  
-.guess-sect,
-.score-sect {
-  background-color: #FFF;
-  border: 2px solid #DBDBDB;
-  width: 92%;
-  margin: 5px 20px;
-  padding: 10px;
-  text-align: left;
-}
-
-.input-sect {
-  display: flex;
-  flex-direction: column;
-  height: 20%;
-}
-
-.guess-sect {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.score-sect {
-  height: 30%;
-}
-
-.current-range{
-  padding: 10px 0px 0px 0px;;
-}
-
-.input-div {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 300;
-  width: 30%;
 }
 
 .min-number,
@@ -161,14 +139,29 @@ button:active {
   background-color: #DD1972;
 }
 
-.update-btn{
+button:disabled,
+button[disabled] {
+  background-color: #D1D2D4; 
+}
+
+.update-btn {
   margin-top: 30px;
   background-color: #6E6E6E;
 }
 
-.submit-btn {
-  background-color: #6E6E6E;
+.hiddenP {
+  display: none;
+}
 
+.guess-sect {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.current-range {
+  padding: 10px 0px 0px 0px;;
 }
 
 .range-span {
@@ -177,7 +170,7 @@ button:active {
   color: #6E6E6E;
 }
 
-.name-div{
+.name-div {
   display: inline-block;
   font-size: 18px;
   font-weight: 300;
@@ -191,9 +184,30 @@ button:active {
   width: 100%;
 }
 
+.input-div {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 300;
+  width: 30%;
+}
+
+input {
+  height: 35px;
+  border: 2px solid #DBDBDB;
+}
+
 .guess-input,
 .guess-input2 {
   width: 100%;
+}
+
+.submit-btn {
+  background-color: #6E6E6E;
+
+}
+
+.score-sect {
+  height: 30%;
 }
 
 .align-score {
@@ -206,17 +220,6 @@ button:active {
   width: 50%;
 }
 
-.score1 {
-  border-right: 2px solid #D0D2D3;
-}
-
-.challanger-name {
-  font-weight: 700;
-  font-size: 16px;
-  padding-bottom: 5px;
-  color: #6E6E6E;
-}
-
 .recent-guess,
 .recent-guess2 {
   color: #DD1972;
@@ -225,10 +228,37 @@ button:active {
   padding: 10px 0px;
 }
 
+.guess-message,
+.guess-message2 {
+  color: #000;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.score1 {
+  border-right: 2px solid #D0D2D3;
+}
+
+.challenger-name {
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: 5px;
+  color: #6E6E6E;
+}
+
+.challenger-name, 
+.challenger-name2 {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 5px;
+  color: #6E6E6E;
+}
+
+/*begin aside styles*/
+
 aside {
   width: 50%;
   background-color: #D1D2D4;
-/*  height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,20 +287,6 @@ aside {
   margin: 5px;
 }
 
-
-.card-body {
-  height: 125px;
-  width: 80%;
-  font-size: 30px;
-  font-weight: 300;
-  color: #6E6E6E;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-top: 2px solid #D0D2D3;
-  border-bottom: 2px solid #D0D2D3;
-}
-
 .card-head,
 .card-foot {
   display: flex;
@@ -289,10 +305,28 @@ aside {
   color: #6E6E6E;
 }
 
+.card-body {
+  height: 125px;
+  width: 80%;
+  font-size: 30px;
+  font-weight: 300;
+  color: #6E6E6E;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-top: 2px solid #D0D2D3;
+  border-bottom: 2px solid #D0D2D3;
+}
 
 .winner-name-update {
   font-weight: 700;
   padding-bottom: 10px;
+}
+
+.card-foot-div {
+  display: flex;
+  width: 40%;
+  padding: 0px 20px;
 }
 
 .num-guess-update,
@@ -302,27 +336,7 @@ aside {
   padding-right: 3px;
 }
 
-.guess-message,
-.guess-message2 {
-  color: #000;
-  font-weight: 300;
-  font-size: 20px;
-}
-
-.challenger-name, 
-.challenger-name2 {
-  font-weight: 700;
-  font-size: 20px;
-  padding-bottom: 5px;
-  color: #6E6E6E;
-}
-
-.card-foot-div{
-  display: flex;
-  width: 40%;
-  padding: 0px 20px;
-}
-.delete-btn{
+.delete-btn {
   border-radius: 100%;
   width: 25px;
   height: 25px;
@@ -330,76 +344,81 @@ aside {
   background-color: #6E6E6E;
 }
 
-.hiddenP {
-  display: none;
-}
 
 .enabled-state {
   background-color: #6E6E6E;
 }
 
+/*begin media queries*/
 
-@media only screen and (max-width: 945px){
-  button {
-    display:block;
-    width: 90%;
-    }
 
-  .align-range {
-    flex-direction: column;
-  }
+@media only screen and (max-width: 945px) {
+  
+.play-half {
+  height: auto;
+}
 
-  .play-half {
-    height: auto;
-  }
+.align-range {
+  flex-direction: column;
+}
 
-  .input-div,
-  .name-div {
+button {
   display: block;
   width: 90%;
-  }
 }
 
-@media only screen and (max-width: 850px){
-  .align-score {
-    display: block;
-  }
-  .score-art{
-    width: 90%;
-    margin: 10px;
-    padding: 5px;
-  }
-  .score1 {
-    border-right: none;
-    border-bottom: 2px solid #D0D2D3;
-  }
+.input-div,
+.name-div {
+  display: block;
+  width: 90%;
 }
 
-@media only screen and (max-width: 585px){
-  .align-sides {
-    display: block;
+}
+
+@media only screen and (max-width: 850px) {
+
+.align-score {
+  display: block;
   }
-  main,
-  aside {
-    width: 100%;
-  }
-  .card {
-    width: 95.5%;
-  }
+
+.score-art {
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
+}
+
+.score1 {
+  border-right: none;
+  border-bottom: 2px solid #D0D2D3;
+}
+
+}
+
+@media only screen and (max-width: 585px) {
+
+.align-sides {
+  display: block;
+}
+
+main,
+aside {
+  width: 100%;
+}
+
+.card {
+  width: 95.5%;
+}
+
 }
 
 @media only screen and (max-width: 440px){
-  h1{
+
+h1{
     font-size: 30px;
-  }
-  .subtitle {
+}
+.subtitle {
     font-size: 12px;
-    width: 26k0px;
-  }
+    width: 260px;
 }
 
-
-
-
-
-
+}
